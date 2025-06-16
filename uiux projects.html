@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI/UX Projects | Harshrajsinh Dodiya</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;500&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --main-accent: #00e6d0;
+            --main-bg1: #181f2a;
+            --main-bg2: #3a1c71;
+            --glass-bg: rgba(255, 255, 255, 0.10);
+            --glass-border: rgba(0, 230, 208, 0.18);
+            --text-light: #f5f6fa;
+            --text-muted: #b2becd;
+            --shadow: 0 8px 32px 0 rgba(58, 28, 113, 0.25);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(120deg, var(--main-bg1) 0%, var(--main-bg2) 100%);
+            background-size: 200% 200%;
+            background-attachment: fixed;
+            animation: gradientMove 12s ease-in-out infinite;
+            color: var(--text-light);
+            font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+        }
+
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(24, 31, 42, 0.85);
+            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 40px;
+            height: 64px;
+            backdrop-filter: blur(8px);
+        }
+
+        .portfolio {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--main-accent);
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: color 0.2s, transform 0.2s;
+            padding: 8px 12px;
+            border-radius: 6px;
+        }
+
+        .nav-links a:hover,
+        .nav-links a:focus {
+            color: var(--main-accent);
+            background: rgba(0, 255, 240, 0.07);
+            transform: scale(1.08);
+            outline: none;
+        }
+
+        main {
+            padding-top: 90px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: var(--main-accent);
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            text-align: center;
+            margin-bottom: 36px;
+            font-size: 1.1rem;
+        }
+
+        .projects-list {
+            display: flex;
+            gap: 32px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .project-card {
+            background: var(--glass-bg);
+            border-radius: 18px;
+            box-shadow: 0 2px 12px #00fff033;
+            border: 1.5px solid var(--glass-border);
+            width: 320px;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 24px;
+        }
+
+        .project-card:hover,
+        .project-card:focus {
+            transform: translateY(-8px) scale(1.04);
+            box-shadow: 0 8px 32px 0 var(--main-accent);
+            outline: none;
+        }
+
+        .project-img {
+            width: 100%;
+            height: 180px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .project-info {
+            padding: 18px;
+            flex: 1;
+        }
+
+        .project-title {
+            color: var(--main-accent);
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .project-desc {
+            color: var(--text-light);
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        .project-links {
+            margin-top: 10px;
+        }
+
+        .project-links a {
+            color: var(--main-accent);
+            margin-right: 18px;
+            font-size: 1.2rem;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .project-links a:hover {
+            color: #0fffc3;
+        }
+
+        @media (max-width: 900px) {
+            main {
+                padding: 90px 12px 0 12px;
+            }
+
+            .projects-list {
+                gap: 16px;
+            }
+
+            .project-card {
+                width: 98vw;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .nav {
+                flex-direction: column;
+                height: auto;
+                padding: 10px 0;
+                gap: 8px;
+            }
+
+            .nav-links {
+                gap: 16px;
+            }
+        }
+
+        .site-footer {
+            width: 100%;
+            text-align: center;
+            padding: 18px 0 12px 0;
+            color: var(--text-muted);
+            font-size: 1rem;
+            letter-spacing: 1px;
+            background: transparent;
+            font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+            margin-top: 40px;
+            user-select: none;
+        }
+
+        .site-footer span {
+            color: var(--main-accent);
+            font-weight: bold;
+            letter-spacing: 1.5px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="nav">
+            <div class="portfolio">UI/UX PROJECTS</div>
+            <div class="nav-links">
+                <a href="index.html"><i class="fa-solid fa-house"></i> HOME</a>
+                <a href="#projects-section">PROJECTS</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <h1>UI/UX Projects</h1>
+        <div class="subtitle">
+            A showcase of my user interface and user experience design work.<br>
+            <span style="font-size:0.95em;">(Click project links to view details or prototypes)</span>
+        </div>
+        <section id="projects-section">
+            <div class="projects-list">
+                <!-- Example Project 1 -->
+                <div class="project-card" tabindex="0">
+                    <div class="project-img" style="background-image: url('project1.webp');"></div>
+                    <div class="project-info">
+                        <div class="project-title">Mobile Banking App Redesign</div>
+                        <div class="project-desc">
+                            A modern, intuitive redesign of a mobile banking app focused on accessibility and ease of use.
+                        </div>
+                        <div class="project-links">
+                            <a href="https://www.figma.com/file/yourfigmalink1" target="_blank" title="Figma Prototype"><i class="fa-brands fa-figma"></i> Figma</a>
+                            <a href="https://dribbble.com/yourdribbble1" target="_blank" title="Dribbble Shot"><i class="fa-brands fa-dribbble"></i> Dribbble</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Example Project 2 -->
+                <div class="project-card" tabindex="0">
+                    <div class="project-img" style="background-image: url('project2.webp');"></div>
+                    <div class="project-info">
+                        <div class="project-title">E-commerce Dashboard UI</div>
+                        <div class="project-desc">
+                            Clean and responsive dashboard interface for managing products, orders, and analytics.
+                        </div>
+                        <div class="project-links">
+                            <a href="https://www.figma.com/file/yourfigmalink2" target="_blank" title="Figma Prototype"><i class="fa-brands fa-figma"></i> Figma</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Example Project 3 -->
+                <div class="project-card" tabindex="0">
+                    <div class="project-img" style="background-image: url('project3.webp');"></div>
+                    <div class="project-info">
+                        <div class="project-title">Travel Booking Website UI</div>
+                        <div class="project-desc">
+                            Engaging web UI for a travel booking platform, focusing on visuals and smooth user flow.
+                        </div>
+                        <div class="project-links">
+                            <a href="https://www.figma.com/file/yourfigmalink3" target="_blank" title="Figma Prototype"><i class="fa-brands fa-figma"></i> Figma</a>
+                            <a href="https://behance.net/yourbehance3" target="_blank" title="Behance Case Study"><i class="fa-brands fa-behance"></i> Behance</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more projects as needed -->
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer">
+        Designed &amp; Developed by <span>HARSHRAJSINH DODIYA</span>
+    </footer>
+</body>
+</html>
